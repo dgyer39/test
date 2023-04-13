@@ -60,3 +60,30 @@ jobs:
       with:
         name: hello-macos-x86_64
         path: hello
+
+  build-windows:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+#    - name: configure
+#      run: ./configure
+
+    - name: Install dependencies
+      run: make
+
+#    - name: Run check
+#      run: make check
+
+#    - name: Run distcheck
+#      run: make distcheck
+    - name: test
+      run: ./hello
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: hello-windows-x86_64
+        path: hello
