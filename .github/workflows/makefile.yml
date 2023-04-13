@@ -7,8 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  name: build-linux
-  build:
+  build-linux:
 
     runs-on: ubuntu-latest
 
@@ -35,10 +34,7 @@ jobs:
         name: hello-linux-x86_64
         path: hello
 
-
-
-  name: build-macos
-  build:
+  build-macos:
 
     runs-on: macos-latest
 
